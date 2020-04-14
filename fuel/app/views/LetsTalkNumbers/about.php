@@ -34,6 +34,8 @@
 		I decided to study computer science in college. In college my love for programming has flourished. 
 		My favorite languages are Java, C++, and Python. After college,
 		I plan on going into the industry as a software engineer. </p>
+	
+		<a href="/~demuthtc/ct310/fuelviews/index.php/ltn/index">Nicole's Version</a>
 	</div>
 	<div class="card">
 	<?php echo Asset::img('NS.jpg');?>
