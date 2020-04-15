@@ -15,7 +15,12 @@ class Controller_ltn extends Controller_Template
 		$this->template->title = 'About';
 		$this->template->content = View::forge('LetsTalkNumbers/about.php', $data);
 	}
-	
+	public function action_hospitals()
+	{
+		$data = array();
+		$this->template->title = 'Data Analysis';
+		$this->template->content = View::forge('LetsTalkNumbers/hospitals.php', $data);
+	}
 }
 
 ?>
