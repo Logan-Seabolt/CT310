@@ -60,7 +60,10 @@ body {
 	width: 70%;
 }
 /* Makes the cards look seperate */
-
+#hospitalTable{
+	overflow:scroll;
+    height:500px;
+}
 
 /* Footer */
 .footer {
