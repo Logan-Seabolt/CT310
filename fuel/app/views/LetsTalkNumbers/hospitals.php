@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<script type="text/javascript" src="https://cs.colostate.edu:4444/~demuthtc/ct310/LTN/assets/js/jquery.tablesorter.min.js"></script>
+	<?php echo Asset::js("jquery.tablesorter.min.js"); ?>
 	<script>
 		$("document").ready(() => {
 			$(function(){
