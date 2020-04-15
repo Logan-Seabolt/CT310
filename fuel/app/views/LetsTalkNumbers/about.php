@@ -21,7 +21,7 @@
                 <li>Playing and designing Video Games</li>
             </ul>
             </p>
-        <a href="/~seaboltl/ct310/fuelviews/index.php/ltn/index">Logan's Version</a>
+        <a href="/~seaboltl/ct310/LTN/index.php/ltn/index">Logan's Version</a>
 	</div>
 	<div class="card">
 	<?php echo Asset::img('TD.jpg');?>
@@ -36,7 +36,7 @@
 		My favorite languages are Java, C++, and Python. After college,
 		I plan on going into the industry as a software engineer. </p>
 	
-		<a href="/~demuthtc/ct310/fuelviews/index.php/ltn/index">Tess's Version</a>
+		<a href="/~demuthtc/ct310/LTN/index.php/ltn/index">Tess's Version</a>
 	</div>
 	<div class="card">
 	<?php echo Asset::img('NS.jpg');?>
@@ -46,7 +46,7 @@
 	 I am also an author of four novels, one of which was my senior honors thesis. </p>
 	 
 			  
-	<a href="/~nlstan/ct310/fuelviews/index.php/ltn/index">Nicole's Version</a>
+	<a href="/~nlstan/ct310/LTN/index.php/ltn/index">Nicole's Version</a>
 	</div>
 	</body>
 </html>
