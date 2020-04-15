@@ -26,7 +26,7 @@
                     $author = "nlstan";
                 echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/index">Home</a>';
                 echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/about">About</a>';
-                echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/index">Data Analysis</a>';
+                echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/hospitals">Data Analysis</a>';
             ?>
 		</div>
 		<?php echo $content; ?>
