@@ -9,7 +9,7 @@
 		<p>My undergraduate education was completed at Colorado State University Fort Collins. 
 		My bachelors degree is in Computer Science with a specialization on Human Centered Computing.
 		Human Centered Computing is a specialization of standard Computer Science that focuses 
-		on Psychology and how people interact with technology. I have applied to the Master's degree 
+		on Psychology and how people interact with technology. I have been accepted to the Master's degree
 		program for Computer Science at CSU Fort Collins with an interest researching the medical and 
 		social applications of Machine Learning and Artificial Intelligence.</p>
         <p>I have many a quaint hobby that I partake in, including:<br>
@@ -21,6 +21,7 @@
                 <li>Playing and designing Video Games</li>
             </ul>
             </p>
+        <a href="/~seaboltl/ct310/fuelviews/index.php/ltn/index">Logan's Version</a>
 	</div>
 	<div class="card">
 	<?php echo Asset::img('TD.jpg');?>
@@ -35,7 +36,7 @@
 		My favorite languages are Java, C++, and Python. After college,
 		I plan on going into the industry as a software engineer. </p>
 	
-		<a href="/~demuthtc/ct310/fuelviews/index.php/ltn/index">Nicole's Version</a>
+		<a href="/~demuthtc/ct310/fuelviews/index.php/ltn/index">Tess's Version</a>
 	</div>
 	<div class="card">
 	<?php echo Asset::img('NS.jpg');?>
