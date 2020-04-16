@@ -14,7 +14,7 @@
 	</head>
 	<body>
 		<div class="header">
-			<?php echo Asset::img('logo.jpg'); ?>
+			<?php echo Asset::img('logoupdated.jpg'); ?>
 		</div>
 		<div class="navbar">
     <?php
@@ -29,7 +29,7 @@
             $author = "nlstan";
 			echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/index">Home</a>';
       echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/about">About</a>';
-      echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/hospitals">Data Analysis</a>';
+      echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/hospitals">Hospital List</a>';
       echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/drglist">DRG List</a>';
 			echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/hospitaldetails">Hospital Details</a>';
 			echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/drgdetails">DRG Details</a>';
