@@ -20,8 +20,18 @@ body {
 
 
 th:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: black;
+  color: white;
+  text-shadow:
+
+   0 0 5px #fff,
+
+
+    0 0 40px #000,
+    
+ 
+  
+    0 0 150px #fff;
 }
 tr:nth-child(even) {background-color: #ddd;}
 
@@ -41,7 +51,7 @@ form{
 }
 
 th {
-  background-color: #333;
+  background-color: black;
   color: white;
  
   padding: 20px;
