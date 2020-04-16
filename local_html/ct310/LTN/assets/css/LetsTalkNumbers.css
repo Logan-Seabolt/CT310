@@ -13,9 +13,72 @@ body {
   background: white;
 }
 .header img{
-  width: 60%;
+  width: 100%;
 
 
+}
+
+
+th:hover {
+  background-color: black;
+  color: white;
+  text-shadow:
+
+   0 0 5px #fff,
+
+
+    0 0 40px #000,
+    
+ 
+  
+    0 0 150px #fff;
+}
+tr:nth-child(even) {background-color: #ddd;}
+
+table{
+  width: auto;
+  margin-left: auto;
+  margin-right:auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+  border-collapse: collapse; 
+
+}
+form{
+  padding: 20px;	
+	
+}
+
+th {
+  background-color: black;
+  color: white;
+ 
+  padding: 20px;
+  position: sticky;
+  top: 0;
+}
+#rowone{ width: 10%;}
+#rowtwo{ width: 80%;}
+#rowthree{ width: 10%;}
+#dtwo{width: 1200px;}
+#done{width: 20%;}
+
+
+.my-custom-scrollbar {
+position: relative;
+height: 400px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+margin: auto;
+}
+
+/*For clicking on the hospital names*/
+.Hname:hover{
+	color: blue;
+	cursor: pointer;
 }
 
 
@@ -43,7 +106,8 @@ body {
 
 /*make the sections*/
 .card {
-  width: 50%;
+
+  width: 80%;
   background-color: #f1f1f1;
   padding-left: 20px;
   padding-right: 20px;
@@ -57,13 +121,10 @@ body {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	width: 70%;
+	width: 40%;
 }
 /* Makes the cards look seperate */
-#hospitalTable{
-	overflow:scroll;
-    height:500px;
-}
+
 
 /* Footer */
 .footer {
