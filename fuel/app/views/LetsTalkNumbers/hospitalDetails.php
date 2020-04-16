@@ -24,7 +24,8 @@
     </h2>
     <h4>
         <?php
-        echo ("MPN: ".$hospitalsData[0]['providerID']." State: ".$hospitalsData[0]['state'])
+        echo ("MPN: ".$hospitalsData[0]['providerID']." State: ".$hospitalsData[0]['state']."<br>");
+        echo ("Address: ".$hospitalsData[0]['address'].", ".$hospitalsData[0]['city'].", ".$hospitalsData[0]['state']." ".$hospitalsData[0]['zipcode']);
         ?>
     </h4>
     <div id="drgdesctable">
@@ -59,8 +60,13 @@
             $author = "nlstan";
         ?>
         $(".DRGdesc").click(function() {
-            window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/drg_description?id="+$(this).attr("id"));
+            window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/drgdetails?id="+$(this).attr("id"));
         });
     </script>
+    <h2>Hospital Lookup</h2>
+    <form method="GET">
+        <span>Enter Hospital ID:</span><input type="text" name="id">
+        <input type="submit" value="Search Hospital" name="idsearch">
+    </form>
     </body>
 </html>

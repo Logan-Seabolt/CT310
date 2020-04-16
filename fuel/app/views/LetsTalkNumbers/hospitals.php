@@ -34,5 +34,21 @@
         </tbody>
     </table>
 </div>
+<script>
+    <?php
+    $temp = $GLOBALS["_SERVER"];
+    $temp = implode($temp);
+    $line = explode("/", $temp);
+    if(in_array("seaboltl",$line))
+        $author = "seaboltl";
+    elseif (in_array("demuthtc",$line))
+        $author = "demuthtc";
+    else
+        $author = "nlstan";
+    ?>
+    $(".Hname").click(function() {
+        window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitalDetails?id="+$(this).attr("id"));
+    });
+</script>
 </body>
 </html>
