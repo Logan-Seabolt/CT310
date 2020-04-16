@@ -13,12 +13,13 @@ class LTNTables extends \Model {
         }
         public static function get_DRG($DRG_ID)
         {
-            return DB::query('SELECT DRG_ID, DRG_Description FROM drg_description WHERE DRG_ID=\''+$DRG_ID + '\'', DB::SELECT)->execute()->as_array();
+            return DB::query("SELECT * FROM drg_cases LEFT JOIN hospitals ON drg_cases.providerID = hospitals.providerID WHERE DRG_ID='$DRG_ID' UNION  SELECT * FROM drg_cases RIGHT JOIN hospitals ON drg_cases.providerID = hospitals.providerID WHERE DRG_ID='$DRG_ID'", DB::SELECT)->execute()->as_array();
         }
         public static function get_HospitalDetails($HospitalID)
         {
-            $retarr = DB::query('SELECT * FROM hospitals WHERE providerID=\''+$HospitalID+'\'', DB::SELECT)->execute()->as_array();
-            $DRG_DATA = DB::query('SELECT * FROM drg_cases WHERE providerID=\''+$HospitalID+'\'', DB::SELECT)->execute()->as_array();
+            $retarr = DB::query("SELECT * FROM hospitals WHERE providerID='$HospitalID'", DB::SELECT)->execute()->as_array();
+            $DRG_DATA = DB::query("SELECT * FROM drg_cases WHERE providerID='$HospitalID'", DB::SELECT)->execute()->as_array();
+            return array("hospitalsData" => $retarr,"CasesData" => $DRG_DATA);
         }
 }
 ?>

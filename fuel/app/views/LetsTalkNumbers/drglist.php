@@ -47,7 +47,7 @@
             $author = "nlstan";
         ?>
     $(".DRGdesc").click(function() {
-        alert("Clicked on: " + $(this).attr("id") + ' <?php echo $author;?>');
+        window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitaldetails?id="+$(this).attr("id"));
     });
 </script>
 </body>

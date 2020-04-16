@@ -29,15 +29,26 @@ class Controller_ltn extends Controller_Template
 	}
 	public function action_hospitaldetails()
 	{
-		$data = array('hospitals' => LTNTables::get_table('hospitals'));
+		if(isset($_GET['id'])){
+			$data = LTNTables::get_HospitalDetails($_GET['id']);
+		}
+		else{
+			$data = LTNTables::get_HospitalDetails('010001');
+		}
 		$this->template->title = 'Hospital Details';
 		$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
 	}
 	public function action_drgdetails()
 	{
+		if(isset($_GET['id'])){
+			$data = array('drg_description' => LTNTables::get_DRG($_GET['id']));
+		}
+		else{
+			$data = array('drg_description' => LTNTables::get_DRG('001'));
+		}
 		$data = array('drg_description' => LTNTables::get_table('drg_description'));
 		$this->template->title = 'DRG Detaila';
-		$this->template->content = View::forge('LetsTalkNumbers/drglist.php', $data);
+		$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
 	}
 }
 
