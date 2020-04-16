@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <?php echo Asset::js("jquery.tablesorter.min.js"); ?>
-    <?php echo Asset::js('jquery.tablesorter.widgets.js');?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $("document").ready(() => {
             $(function(){
@@ -22,7 +20,7 @@
 <div id="hospitalTable">
     <table id="hospital_table" class="tablesorter my-custom-scrollbar table-wrapper-scroll-y">
         <thead>
-        <th id="rowone">Provider Name</th><th id="rowtwo">Provider State</th><th id="rowthree">Provider ID</th>
+        <th id="rowtwo">Provider Name</th><th id="rowthree">Provider State</th><th id="rowone">Provider ID</th>
         </thead>
         <tbody>
         <?php

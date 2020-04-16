@@ -31,7 +31,7 @@ class Controller_ltn extends Controller_Template
 	{
 		$data = array('hospitals' => LTNTables::get_table('hospitals'));
 		$this->template->title = 'Hospital Details';
-		$this->template->content = View::forge('LetsTalkNumbers/hospitals.php', $data);
+		$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
 	}
 	public function action_drgdetails()
 	{

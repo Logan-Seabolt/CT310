@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <?php echo Asset::js("jquery.tablesorter.min.js"); ?>
-  
+
     <script>
         $("document").ready(() => {
             $(function(){
@@ -28,11 +28,27 @@
         foreach ($drg_description as $line) {
             $id = $line['DRG_ID'];
             $desc = $line['DRG_Description'];
-            echo "<tr><td>$id</td><td id='$id' class='DRGdesc'>$desc</td></tr>";
+            echo "<tr><td id='$id' class='DRGdesc'>$id</td><td>$desc</td></tr>";
         }
         ?>
         </tbody>
     </table>
 </div>
+<script>
+    <?php
+        $temp = $GLOBALS["_SERVER"];
+        $temp = implode($temp);
+        $line = explode("/", $temp);
+        if(in_array("seaboltl",$line))
+            $author = "seaboltl";
+        elseif (in_array("demuthtc",$line))
+            $author = "demuthtc";
+        else
+            $author = "nlstan";
+        ?>
+    $(".DRGdesc").click(function() {
+        alert("Clicked on: " + $(this).attr("id") + ' <?php echo $author;?>');
+    });
+</script>
 </body>
 </html>

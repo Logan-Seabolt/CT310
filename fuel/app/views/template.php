@@ -7,8 +7,6 @@
 		<meta name="keywords" content="Let's Talk Numbers">
 		<?php echo Asset::js('jquery-3.3.1.min.js');?>
 		<?php echo Asset::js('jquery.tablesorter.min.js');?>
-		<?php echo Asset::js('jquery.tablesorter.widgets.min.js');?>
-		<?php echo Asset::js('jquery.tablesorter.widgets-filter-formatter.min.js');?>
 		<?php echo Asset::css('LetsTalkNumbers.css');?>
 		<title> <?php echo $title; ?> </title>
 	</head>
@@ -28,9 +26,9 @@
         else
             $author = "nlstan";
 			echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/index">Home</a>';
-      echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/about">About</a>';
-      echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/hospitals">Hospital List</a>';
-      echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/drglist">DRG List</a>';
+            echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/about">About</a>';
+            echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/hospitals">Hospital List</a>';
+            echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/drglist">DRG List</a>';
 			echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/hospitaldetails">Hospital Details</a>';
 			echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/drgdetails">DRG Details</a>';
       ?>
