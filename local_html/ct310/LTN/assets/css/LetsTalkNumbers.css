@@ -74,6 +74,13 @@ overflow: auto;
 display: block;
 margin: auto;
 }
+
+/*For clicking on the hospital names*/
+.Hname:hover{
+	color: blue;
+	cursor: pointer;
+}
+
 /* Style the top navigation bar */
 .navbar {
   overflow: hidden;
