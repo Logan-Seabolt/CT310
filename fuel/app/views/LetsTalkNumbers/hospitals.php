@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <?php echo Asset::js("jquery.tablesorter.min.js"); ?>
-    <?php echo Asset::js('jquery.tablesorter.widgets.min.js');?>
-    <?php echo Asset::js('jquery.tablesorter.widgets-filter-formatter.min.js');?>
+    <?php echo Asset::js('jquery.tablesorter.widgets.js');?>
+    <?php echo Asset::js('jquery.tablesorter.widgets-filter-formatter.js');?>
 </head>
 <body>
 <div id="hospitalTable">
@@ -17,7 +17,7 @@
             $id = $line['providerID'];
             $name = $line['providerName'];
             $state = $line['state'];
-            echo "<tr><td>$id</td><td>$name</td><td>$state</td></tr>";
+            echo "<tr><td>$id</td><td id="$id">$name</td><td>$state</td></tr>";
         }
         ?>
         </tbody>

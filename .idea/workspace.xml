@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb5dd6c3-9ac6-4f91-bb22-be03a960cb85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/HospitalBK.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel/app/classes/controller/LetsTalkNumbers.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/fuel/app/classes/controller/ltn.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/classes/controller/ltn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel/app/classes/controller/tableControler.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel/app/classes/model/LTNtables.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/classes/model/LTNtables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitallist.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitallist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuel/app/classes/model/LTNtables.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/classes/model/ltntables.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitals.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitals.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586820074021</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Hospital Database update. Made it so that the hospital page uses a database in place of a hard coded table">
+      <created>1587001003215</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587001003215</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,21 +96,26 @@
     <MESSAGE value="Fixing incorrect php file" />
     <MESSAGE value="Formal fixes, included nicole's zip file into file paths" />
     <MESSAGE value="Lots of minor fixes and edits" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lots of minor fixes and edits" />
+    <MESSAGE value="Hospital Database update. Made it so that the hospital page uses a database in place of a hard coded table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hospital Database update. Made it so that the hospital page uses a database in place of a hard coded table" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1586820073398">
+    <state x="911" y="74" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587001457763">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586820073398" />
+    <state x="911" y="74" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587001457763" />
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1587001002293">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587001002293" />
     <state x="267" y="275" key="FileChooserDialogImpl" timestamp="1586822997695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="267" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586822997695" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586817457013">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1587001006355">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586817457013" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587001006355" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586815924105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

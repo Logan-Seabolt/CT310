@@ -1,5 +1,5 @@
 <?php
- use Model\LTNtables;
+use \Model\LTNTables;
 class Controller_ltn extends Controller_Template
 {
 
@@ -17,7 +17,7 @@ class Controller_ltn extends Controller_Template
 	}
 	public function action_hospitals()
 	{
-		$data = array('hospitals' => LTNtables::get_table('hospitals'));
+		$data = array('hospitals' => LTNTables::get_table('hospitals'));
 		$this->template->title = 'Data Analysis';
 		$this->template->content = View::forge('LetsTalkNumbers/hospitals.php', $data);
 	}
