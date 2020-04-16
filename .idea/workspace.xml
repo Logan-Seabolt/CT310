@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb5dd6c3-9ac6-4f91-bb22-be03a960cb85" name="Default Changelist" comment="">
+    <list default="true" id="eb5dd6c3-9ac6-4f91-bb22-be03a960cb85" name="Default Changelist" comment="Fixes to multiple aspects of the files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drglist.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drglist.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitals.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitals.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local_html/ct310/LTN/assets/css/LetsTalkNumbers.css" beforeDir="false" afterPath="$PROJECT_DIR$/local_html/ct310/LTN/assets/css/LetsTalkNumbers.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local_html/ct310/LTN/assets/js/widget-filter-formatter.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +53,8 @@
       <workItem from="1586817434063" duration="2694000" />
       <workItem from="1586822712577" duration="289000" />
       <workItem from="1586823473564" duration="404000" />
-      <workItem from="1587004879755" duration="327000" />
+      <workItem from="1587004879755" duration="610000" />
+      <workItem from="1587052873319" duration="716000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing incorrect php file">
       <created>1586816418898</created>
@@ -106,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587003791469</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixes to multiple aspects of the files">
+      <created>1587005227800</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587005227800</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,17 +123,18 @@
     <MESSAGE value="Formal fixes, included nicole's zip file into file paths" />
     <MESSAGE value="Lots of minor fixes and edits" />
     <MESSAGE value="Hospital Database update. Made it so that the hospital page uses a database in place of a hard coded table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hospital Database update. Made it so that the hospital page uses a database in place of a hard coded table" />
+    <MESSAGE value="Fixes to multiple aspects of the files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes to multiple aspects of the files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="911" y="74" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587001457763">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="911" y="74" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587001457763" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1587003791006">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1587053258084">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587003791006" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587053258084" />
     <state x="267" y="275" key="FileChooserDialogImpl" timestamp="1586822997695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -136,17 +143,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1274" y="447" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587003593951" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1587003793699">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1587005229425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587003793699" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587005229425" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586815924105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586815924105" />
-    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587000621541">
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587053260908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587000621541" />
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587053260908" />
   </component>
 </project>
