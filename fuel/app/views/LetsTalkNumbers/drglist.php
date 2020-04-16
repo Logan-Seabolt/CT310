@@ -3,13 +3,25 @@
 <head>
     <?php echo Asset::js("jquery.tablesorter.min.js"); ?>
     <?php echo Asset::js('jquery.tablesorter.widgets.js');?>
-    <?php echo Asset::js('jquery.tablesorter.widgets-filter-formatter.js');?>
+    <script>
+        $("document").ready(() => {
+            $(function(){
+                $('#drg_table').tablesorter({
+                    //widgets        : ['zebra', 'columns'],
+                    //usNumberFormat : false,
+                    //sortReset      : true,
+                    //sortRestart    : true
+
+                });
+            });
+        });
+    </script>
 </head>
 <body>
-<div id="hospitalTable">
-    <table id="hospital_table" class="tablesorter my-custom-scrollbar table-wrapper-scroll-y">
+<div id="drgtable">
+    <table id="drg_table" class="tablesorter my-custom-scrollbar table-wrapper-scroll-y">
         <thead>
-        <th id="rowone">Provider ID</th><th id="rowtwo">Provider Name</th><th id="rowthree">Provider State</th>
+        <th id="rowone">DRG ID</th><th id="rowtwo">DRG Description</th>
         </thead>
         <tbody>
         <?php

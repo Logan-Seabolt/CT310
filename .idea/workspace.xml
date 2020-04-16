@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="eb5dd6c3-9ac6-4f91-bb22-be03a960cb85" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drglist.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drglist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitals.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitals.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local_html/ct310/LTN/assets/css/LetsTalkNumbers.css" beforeDir="false" afterPath="$PROJECT_DIR$/local_html/ct310/LTN/assets/css/LetsTalkNumbers.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local_html/ct310/LTN/assets/js/widget-filter-formatter.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,9 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,7 +23,6 @@
   <component name="ProjectId" id="1aVLfkedt6r72QPMJmK9JHnIkQB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -54,6 +55,7 @@
       <workItem from="1586817434063" duration="2694000" />
       <workItem from="1586822712577" duration="289000" />
       <workItem from="1586823473564" duration="404000" />
+      <workItem from="1587004879755" duration="327000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing incorrect php file">
       <created>1586816418898</created>
@@ -108,7 +110,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixing incorrect php file" />

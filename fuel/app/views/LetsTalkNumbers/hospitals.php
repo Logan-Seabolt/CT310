@@ -3,7 +3,19 @@
 <head>
     <?php echo Asset::js("jquery.tablesorter.min.js"); ?>
     <?php echo Asset::js('jquery.tablesorter.widgets.js');?>
-    <?php echo Asset::js('jquery.tablesorter.widgets-filter-formatter.js');?>
+    <script>
+        $("document").ready(() => {
+            $(function(){
+                $('#hospital_table').tablesorter({
+                    //widgets        : ['zebra', 'columns'],
+                    //usNumberFormat : false,
+                    //sortReset      : true,
+                    //sortRestart    : true
+
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 <div id="hospitalTable">
