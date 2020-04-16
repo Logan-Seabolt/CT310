@@ -2,8 +2,8 @@
 <html lang="en">
 	<head>
 	<?php echo Asset::js("jquery.tablesorter.min.js"); ?>
-<?php echo Asset::js('jquery.tablesorter.widgets.min.js');?>
-		<?php echo Asset::js('jquery.tablesorter.widgets-filter-formatter.min.js');?>
+    <?php echo Asset::js('jquery.tablesorter.widgets.min.js');?>
+    <?php echo Asset::js('jquery.tablesorter.widgets-filter-formatter.min.js');?>
 	<script>
 		$("document").ready(() => {
 			$(function(){
