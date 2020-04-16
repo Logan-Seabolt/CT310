@@ -5,7 +5,7 @@
         <script>
             $("document").ready(() => {
                 $(function(){
-                    $('#drg_table').tablesorter({
+                    $('#drg_desctable').tablesorter({
                         //widgets        : ['zebra', 'columns'],
                         //usNumberFormat : false,
                         //sortReset      : true,
