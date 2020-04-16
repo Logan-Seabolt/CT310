@@ -22,6 +22,10 @@ body {
 	color: blue;
 	cursor: pointer;
 }
+.HospitalName:hover{
+	color: blue;
+	cursor: pointer;
+}
 .DRGdesc:hover{
 	color: blue;
 	cursor: pointer;
