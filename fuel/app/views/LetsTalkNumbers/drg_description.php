@@ -63,5 +63,10 @@
         window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitaldetails?id="+$(this).attr("id"));
     });
 </script>
+<h2>DRG Search</h2>
+<form method="GET">
+    <span>Enter DRG ID:</span><input type="text" name="id">
+    <input type="submit" value="Search DRG" name="idsearch">
+</form>
 </body>
 </html>

@@ -86,6 +86,26 @@ class Controller_ltn extends Controller_Template
 			$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
 		}
 	}
+	public function get_drgdetails()
+	{
+		if(isset($_GET['id'])){
+			$data = array('drg_description' => LTNTables::get_DRG($_GET['id']));
+			if(strlen($_GET['id']) > 3 || strlen($_GET['id']) < 3 || !ctype_digit($_GET['id']) || sizeof($data)==0){
+				$data = array();
+				$this->template->title = 'DRG Details';
+				$this->template->content = View::forge('LetsTalkNumbers/drgERR.php', $data);
+			}
+			else{
+				$this->template->title = 'DRG Details';
+				$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
+			}
+		}
+		else{
+			$data = array('drg_description' => LTNTables::get_DRG('001'));
+			$this->template->title = 'DRG Details';
+			$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
+		}
+	}
 }
 
 ?>

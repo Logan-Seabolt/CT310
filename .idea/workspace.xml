@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb5dd6c3-9ac6-4f91-bb22-be03a960cb85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drgERR.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitalERR.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fuel/app/classes/controller/ltn.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/classes/controller/ltn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/HospitalBK.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/HospitalBK.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drgERR.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drgERR.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drg_description.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drg_description.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drglist.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drglist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitalDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitalDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitals.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitals.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +57,8 @@
       <workItem from="1586823473564" duration="404000" />
       <workItem from="1587004879755" duration="610000" />
       <workItem from="1587052873319" duration="4310000" />
-      <workItem from="1587057202699" duration="11048000" />
+      <workItem from="1587057202699" duration="11123000" />
+      <workItem from="1587070976517" duration="205000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing incorrect php file">
       <created>1586816418898</created>
@@ -148,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587065565790</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Page fully functional for milestone 1">
+      <created>1587069306806</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1587069306806</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +165,8 @@
     <MESSAGE value="Fixes to multiple aspects of the files" />
     <MESSAGE value="Updated code for getting tables and data" />
     <MESSAGE value="Finished hospitalDetails.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished hospitalDetails.php" />
+    <MESSAGE value="Page fully functional for milestone 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Page fully functional for milestone 1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="336" y="361" key="#SQL_Dialects" timestamp="1587055102122">
@@ -173,10 +177,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="911" y="74" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587001457763" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1587065565333">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1587069306271">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587065565333" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587069306271" />
     <state x="267" y="275" key="FileChooserDialogImpl" timestamp="1586822997695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -189,10 +193,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1274" y="447" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587068404180" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1587065567052">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1587069308031">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587065567052" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587069308031" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586815924105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
