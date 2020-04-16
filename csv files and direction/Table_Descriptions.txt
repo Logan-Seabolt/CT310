@@ -1,0 +1,19 @@
+Table 1, Hospital Table
+Key ID = Provider Id text, Name = text, Street address = text, City = text, 
+State = text, zip code = number, HRR = text
+
+Table 2, DRGs
+Name = text, Hospital = Provider ID text, Total Discharges = number (short), 
+Average Covered Charges = Long number, Average Total Payments = long number, 
+Average Medicare Payments = long number.
+
+CREATE TABLE hospitals (providerID VARCHAR(6) NOT NULL PRIMARY KEY, providerName VARCHAR(255) NOT NULL, address VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(2) NOT NULL, zipcode VARCHAR(6) NOT NULL, hrr VARCHAR(255) NOT NULL);
+LOAD DATA LOCAL INFILE 'hospitals.csv' INTO TABLE hospitals FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n'; 
+create table drg_description (DRG_ID VARCHAR(3) NOT NULL PRIMARY KEY, DRG_Description VARCHAR(255) NOT NULL);
+LOAD DATA LOCAL INFILE 'drgsmk2.csv' INTO TABLE drg_description FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n';
+CREATE TABLE drg_cases (DRG_ID VARCHAR(3) NOT NULL, DRG_Description VARCHAR(255) NOT NULL, providerID VARCHAR(6) NOT NULL, discharges INT NOT NULL, avCovCharge DECIMAL(20,2) NOT NULL, avTotPay DECIMAL(20,2) NOT NULL, avMedPay DECIMAL(20, 2) NOT NULL, FOREIGN KEY (providerID) REFERENCES hospitals(providerID), FOREIGN KEY (DRG_ID) REFERENCES drg_description(DRG_ID));
+LOAD DATA LOCAL INFILE 'drgsmk2.csv' INTO TABLE drg_cases FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n';
+
+CSV files are broken up into two versions
+hospitals.csv which only has the hospital information
+drgs.csv which has the DRG, Pateient info, and linked hospital id.
