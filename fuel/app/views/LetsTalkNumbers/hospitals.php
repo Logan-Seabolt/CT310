@@ -17,7 +17,7 @@
             $id = $line['providerID'];
             $name = $line['providerName'];
             $state = $line['state'];
-            echo "<tr><td>$id</td><td id="$id">$name</td><td>$state</td></tr>";
+            echo "<tr><td>$id</td><td id='$id' class='Hname'>$name</td><td>$state</td></tr>";
         }
         ?>
         </tbody>
