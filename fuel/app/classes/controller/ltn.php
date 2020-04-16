@@ -21,6 +21,12 @@ class Controller_ltn extends Controller_Template
 		$this->template->title = 'Data Analysis';
 		$this->template->content = View::forge('LetsTalkNumbers/hospitals.php', $data);
 	}
+	public function action_drglist()
+	{
+		$data = array('drg_description' => LTNTables::get_table('drg_description'));
+		$this->template->title = 'DRG List';
+		$this->template->content = View::forge('LetsTalkNumbers/drglist.php', $data);
+	}
 }
 
 ?>
