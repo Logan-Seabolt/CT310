@@ -19,6 +19,45 @@ body {
 }
 
 
+th:hover {
+  background-color: #ddd;
+  color: black;
+}
+tr:nth-child(even) {background-color: #ddd;}
+
+table{
+  width: 100%;
+  margin-left: auto;
+  margin-right:auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+  position: relative;
+  border-collapse: collapse; 
+
+}
+th {
+  background-color: #333;
+  color: white;
+ 
+  padding: 20px;
+  position: sticky;
+  top: 0;
+}
+#rowone{ width: 200px;}
+#rowtwo{ width: 1000px;}
+#rowthree{ width: 200px;}
+
+
+.my-custom-scrollbar {
+position: relative;
+height: 400px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+margin: auto;
+}
 /* Style the top navigation bar */
 .navbar {
   overflow: hidden;
@@ -43,7 +82,8 @@ body {
 
 /*make the sections*/
 .card {
-  width: 50%;
+
+  width: 80%;
   background-color: #f1f1f1;
   padding-left: 20px;
   padding-right: 20px;
@@ -57,7 +97,7 @@ body {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	width: 70%;
+	width: 40%;
 }
 /* Makes the cards look seperate */
 
