@@ -70,7 +70,7 @@ class Controller_ltn extends Controller_Template
 	{
 		if(isset($_GET['id'])){
 			$data = array('drg_description' => LTNTables::get_DRG($_GET['id']));
-			if(strlen($_GET['id']) > 3 || strlen($_GET['id']) < 3 || !ctype_digit($_GET['id']) || sizeof($data)==0){
+			if(strlen($_GET['id']) > 3 || strlen($_GET['id']) < 3 || !ctype_digit($_GET['id']) || sizeof($data['drg_description'])==0){
 				$data = array();
 				$this->template->title = 'DRG Details';
 				$this->template->content = View::forge('LetsTalkNumbers/drgERR.php', $data);
@@ -90,7 +90,7 @@ class Controller_ltn extends Controller_Template
 	{
 		if(isset($_GET['id'])){
 			$data = array('drg_description' => LTNTables::get_DRG($_GET['id']));
-			if(strlen($_GET['id']) > 3 || strlen($_GET['id']) < 3 || !ctype_digit($_GET['id']) || sizeof($data)==0){
+			if(strlen($_GET['id']) > 3 || strlen($_GET['id']) < 3 || !ctype_digit($_GET['id']) || sizeof($data['drg_description'])==0){
 				$data = array();
 				$this->template->title = 'DRG Details';
 				$this->template->content = View::forge('LetsTalkNumbers/drgERR.php', $data);
