@@ -19,12 +19,12 @@
 <body>
 <h2>
     <?php
-    echo ("DRG Lookup");
+    echo ($drg_description[0]['DRG_Description']);
     ?>
 </h2>
 <h4>
     <?php
-    echo ("ID: ".$drg_description[0]['DRG_ID']." Description: ".$drg_description[0]['DRG_Description'])
+    echo ("ID: ".$drg_description[0]['DRG_ID'])
     ?>
 </h4>
 <div id="hospitalList">
@@ -63,7 +63,7 @@
         window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitaldetails?id="+$(this).attr("id"));
     });
 </script>
-<h2>DRG Search</h2>
+<h2>DRG Lookup</h2>
 <form method="GET">
     <span>Enter DRG ID:</span><input type="text" name="id">
     <input type="submit" value="Search DRG" name="idsearch">
