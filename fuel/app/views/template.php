@@ -6,6 +6,9 @@
 		<meta name="description" content="Home Page">
 		<meta name="keywords" content="Let's Talk Numbers">
 		<?php echo Asset::js('jquery-3.3.1.min.js');?>
+		<?php echo Asset::js('jquery.tablesorter.min.js');?>
+		<?php echo Asset::js('jquery.tablesorter.widgets.min.js');?>
+		<?php echo Asset::js('jquery.tablesorter.widgets-filter-formatter.min.js');?>
 		<?php echo Asset::css('LetsTalkNumbers.css');?>
 		<title> <?php echo $title; ?> </title>
 	</head>
@@ -14,20 +17,12 @@
 			<?php echo Asset::img('logo.jpg'); ?>
 		</div>
 		<div class="navbar">
-            <?php
-                $temp = $GLOBALS["_SERVER"];
-                $temp = implode($temp);
-                $line = explode("/", $temp);
-                if(in_array("seaboltl",$line))
-                    $author = "seaboltl";
-                elseif (in_array("demuthtc",$line))
-                    $author = "demuthtc";
-                else
-                    $author = "nlstan";
-                echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/index">Home</a>';
-                echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/about">About</a>';
-                echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/hospitals">Data Analysis</a>';
-            ?>
+			<a href="/~nlstan/ct310/fuelviews/index.php/ltn/index">Home</a>
+			<a href="/~nlstan/ct310/fuelviews/index.php/ltn/about">About</a>
+			<a href="/~nlstan/ct310/fuelviews/index.php/ltn/hospitallist">Hospital List</a>
+			<a href="/~nlstan/ct310/fuelviews/index.php/ltn/drglist">DRG List</a>
+			<a href="/~nlstan/ct310/fuelviews/index.php/ltn/hospitaldetails">Hospital Details</a>
+			<a href="/~nlstan/ct310/fuelviews/index.php/ltn/drgdetails">DRG Details</a>
 		</div>
 		<?php echo $content; ?>
 		<div class="footer">
