@@ -41,7 +41,7 @@
                 $covered = $line['avCovCharge'];
                 $total = $line['avTotPay'];
                 $medicare = $line['avMedPay'];
-                echo "<tr><td id='$id' class='DRGdesc'>$id</td><td>$desc</td><td>$covered</td><td>$total</td><td>$medicare</td></tr>";
+                echo "<tr><td id='$id' class='DRGdesc'>$id</td><td>$desc</td><td>\$$covered</td><td>\$$total</td><td>\$$medicare</td></tr>";
             }
             ?>
             </tbody>
