@@ -13,7 +13,7 @@ body {
   background: white;
 }
 .header img{
-  width: 60%;
+  width: 100%;
 
 
 }
@@ -26,16 +26,20 @@ th:hover {
 tr:nth-child(even) {background-color: #ddd;}
 
 table{
-  width: 100%;
+  width: auto;
   margin-left: auto;
   margin-right:auto;
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 20px;
-  position: relative;
   border-collapse: collapse; 
 
 }
+form{
+  padding: 20px;	
+	
+}
+
 th {
   background-color: #333;
   color: white;
@@ -44,9 +48,11 @@ th {
   position: sticky;
   top: 0;
 }
-#rowone{ width: 200px;}
-#rowtwo{ width: 1000px;}
-#rowthree{ width: 200px;}
+#rowone{ width: 10%;}
+#rowtwo{ width: 80%;}
+#rowthree{ width: 10%;}
+#dtwo{width: 1200px;}
+#done{width: 20%;}
 
 
 .my-custom-scrollbar {
