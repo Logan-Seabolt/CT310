@@ -16,6 +16,7 @@
         });
     </script>
 </head>
+    <br>
 <body>
 <div id="hospitalTable">
     <table id="hospital_table" class="tablesorter my-custom-scrollbar table-wrapper-scroll-y">
