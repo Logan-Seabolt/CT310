@@ -31,6 +31,13 @@
         echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/drglist">DRG List</a>';
         echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/hospitaldetails">Hospital Details</a>';
         echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/drgdetails">DRG Details</a>';
+        //Add a Login Button here? if not set login add login button, else print logout?
+        if(isset($_SESSION['username'])){
+            echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/logout">Log Out</a>';
+        }
+        else{
+            echo '<a href="/~'.$author.'/ct310/LTN/index.php/ltn/login">Log In</a>';
+        }
       ?>
 		</div>
 		<?php echo $content; ?>
