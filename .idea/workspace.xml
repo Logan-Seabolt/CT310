@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="eb5dd6c3-9ac6-4f91-bb22-be03a960cb85" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuel/app/classes/controller/ltn.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/classes/controller/ltn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drg_description.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drg_description.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitalDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitalDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitals.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitals.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuel/app/views/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/template.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +21,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 5.6" />
   <component name="ProjectId" id="1aVLfkedt6r72QPMJmK9JHnIkQB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -57,7 +62,11 @@
       <workItem from="1587052873319" duration="4310000" />
       <workItem from="1587057202699" duration="11123000" />
       <workItem from="1587070976517" duration="919000" />
-      <workItem from="1587073074652" duration="43000" />
+      <workItem from="1587073074652" duration="152000" />
+      <workItem from="1587081509906" duration="385000" />
+      <workItem from="1587676261503" duration="40000" />
+      <workItem from="1588182159326" duration="2459000" />
+      <workItem from="1588268470690" duration="15420000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing incorrect php file">
       <created>1586816418898</created>
@@ -164,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587071377494</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added $s to hospitalDetails.php">
+      <created>1587073133422</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1587073133422</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,9 +196,18 @@
     <MESSAGE value="Finished hospitalDetails.php" />
     <MESSAGE value="Page fully functional for milestone 1" />
     <MESSAGE value="Added search bar to DRG pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added search bar to DRG pages" />
+    <MESSAGE value="Added $s to hospitalDetails.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added $s to hospitalDetails.php" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="540" y="175" key="#CLI_Interpreters" timestamp="1588276351158">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="175" key="#CLI_Interpreters/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588276351158" />
+    <state x="667" y="163" key="#PHP" timestamp="1588276352185">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="163" key="#PHP/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588276352185" />
     <state x="336" y="361" key="#SQL_Dialects" timestamp="1587055102122">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -191,14 +216,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="911" y="74" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587001457763" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1587071377010">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1587073132829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587071377010" />
-    <state x="267" y="275" key="FileChooserDialogImpl" timestamp="1586822997695">
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587073132829" />
+    <state x="267" y="275" key="FileChooserDialogImpl" timestamp="1587676290780">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="267" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586822997695" />
+    <state x="267" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587676290780" />
     <state x="184" y="86" key="MergeDialog" timestamp="1587055376689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -207,18 +232,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1274" y="447" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587068404180" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1587071379633">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1587073134776">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587071379633" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587073134776" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586815924105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586815924105" />
-    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587071702748">
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588289177772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587071702748" />
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588289177772" />
     <state x="-7" y="0" width="974" height="1047" key="dock-window-1" timestamp="1587063016715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

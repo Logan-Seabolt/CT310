@@ -101,7 +101,7 @@
 <h2>DRG Lookup</h2>
 <form method="GET">
     <span>Enter DRG ID:</span><input type="text" name="id">
-    <input type="submit" value="Search DRG" name="idsearch">
+    <input type="submit" value="Search DRG">
 </form>
 </body>
 </html>

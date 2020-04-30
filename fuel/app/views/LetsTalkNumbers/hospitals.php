@@ -37,6 +37,7 @@
         </thead>
         <tbody>
         <?php
+
 		$start = 20 * $_GET['page'];
 		$end = min($start+20,count($hospitals));	
 		for($i = $start; $i < $end; $i++){

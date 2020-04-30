@@ -86,6 +86,28 @@ class Controller_ltn extends Controller_Template
 			$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
 		}
 	}
+	public function action_login() {
+		session_start();
+		if (Input::post()) {
+			$username = Input::post('username');
+			$pass = Input::post('password');
+			// Set's the variable $_SESSION['username']
+			$res = Auth::login($username, $pass);
+			if ($res) {
+				$_SESSION['username'] = $username;
+				return Response::redirect('index.php/ltn');
+			}
+			else {
+				return Response::forge(View::Forge('authviews/outline', array(
+					'contents' => View::forge('authviews/login'),
+					'alerts' => View::forge('authviews/failalert', array('message' => 'Login failed'))
+				)));
+			}
+		}
+		return Response::forge(View::Forge('authviews/outline', array(
+			'contents' => View::forge('authviews/login')
+		)));
+	}
 	public function get_drgdetails()
 	{
 		if(isset($_GET['id'])){
