@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php echo Asset::js("jquery.tablesorter.min.js"); ?>
+    <?php echo Asset::js("jquery.tablesorter.min.js"); 
+	if(isset($_GET['page'])){
+		if($_GET['page'] < 0){
+			$_GET['page'] = 0;
+		}
+		if($_GET['page'] >= ceil(count($hospitals)/ 20)){
+			$_GET['page'] = ceil(count($hospitals)/ 20)-1;
+		}
+	}
+	else{
+		$_GET['page'] = 0;
+	}
+	?>
     <script>
         $("document").ready(() => {
             $(function(){
@@ -25,14 +37,15 @@
         </thead>
         <tbody>
         <?php
-        $start = 20 * $_GET['page'];
-        $end = min($start+20,count($hospitals));
-        for($i = $start; $i < $end; $i++){
-            $id = $hospitals[$i]['providerID'];
+
+		$start = 20 * $_GET['page'];
+		$end = min($start+20,count($hospitals));	
+		for($i = $start; $i < $end; $i++){
+			$id = $hospitals[$i]['providerID'];
             $name = $hospitals[$i]['providerName'];
             $state = $hospitals[$i]['state'];
             echo "<tr><td id='$id' class='Hname'>$name</td><td>$state</td><td>$id</td></tr>";
-        }
+		}
         ?>
         </tbody>
     </table>
@@ -58,22 +71,22 @@
     $(".Hname").click(function() {
         window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitalDetails?id="+$(this).attr("id"));
     });
-    $("#previous").click(function (){
-        //var page = <?php echo($_GET['page']); ?>;
-        if(<?php echo($_GET['page']); ?> == 0){
-        }
-    else{
-            window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitals?page="+<?php echo ($_GET['page']-1);?>, "_self");
-        }
-    });
-    $("#next").click(function (){
-        //var page = <?php echo($_GET['page']); ?>;
-        if(<?php echo($_GET['page']); ?> >= <?php echo (ceil(count($hospitals)/20));?>){
-        }
-    else{
-            window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitals?page="+<?php echo ($_GET['page']+1);?>, "_self");
-        }
-    });
+	$("#previous").click(function (){
+		//var page = <?php echo($_GET['page']); ?>;
+		if(<?php echo($_GET['page']); ?> == 0){			
+		}
+		else{
+			window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitals?page="+<?php echo ($_GET['page']-1);?>, "_self");
+		}
+	});
+	$("#next").click(function (){
+		//var page = <?php echo($_GET['page']); ?>;
+		if(<?php echo($_GET['page']); ?> >= <?php echo (ceil(count($hospitals)/20));?>){		
+		}
+		else{
+			window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitals?page="+<?php echo ($_GET['page']+1);?>, "_self");
+		}
+	});
 </script>
 </body>
 </html>
