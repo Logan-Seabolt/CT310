@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb5dd6c3-9ac6-4f91-bb22-be03a960cb85" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/alert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/authInit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fuel/app/classes/controller/ltn.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/classes/controller/ltn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drg_description.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drg_description.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitalDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitalDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitals.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitals.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fuel/app/views/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/template.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,10 +229,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="MergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587055376689" />
-    <state x="1274" y="447" key="NewPhpFileDialog" timestamp="1587068404180">
+    <state x="1274" y="447" key="NewPhpFileDialog" timestamp="1588537402703">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1274" y="447" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587068404180" />
+    <state x="1274" y="447" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588537402703" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1587073134776">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
