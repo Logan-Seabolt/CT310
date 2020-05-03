@@ -1,34 +1,41 @@
 <?php
 use \Model\LTNTables;
+class passwordException extends Exception { }
+
 class Controller_ltn extends Controller_Template
 {
 
 	public function action_index()
 	{
+		session_start();
 		$data = array();
 		$this->template->title = 'Lets Talk Numbers';
 		$this->template->content = View::forge('LetsTalkNumbers/index.php', $data);
 	}
 	public function action_about()
 	{
+		session_start();
 		$data = array();
 		$this->template->title = 'About';
 		$this->template->content = View::forge('LetsTalkNumbers/about.php', $data);
 	}
 	public function action_hospitals()
 	{
+		session_start();
 		$data = array('hospitals' => LTNTables::get_table('hospitals'));
 		$this->template->title = 'Hospital List';
 		$this->template->content = View::forge('LetsTalkNumbers/hospitals.php', $data);
 	}
 	public function action_drglist()
 	{
+		session_start();
 		$data = array('drg_description' => LTNTables::get_table('drg_description'));
 		$this->template->title = 'DRG List';
 		$this->template->content = View::forge('LetsTalkNumbers/drglist.php', $data);
 	}
 	public function action_hospitaldetails()
 	{
+		session_start();
 		if(isset($_GET['id'])){
 			$data = LTNTables::get_HospitalDetails($_GET['id']);
 			if(strlen($_GET['id']) > 6 || strlen($_GET['id']) < 6 || !ctype_digit($_GET['id']) || sizeof($data['hospitalsData']) == 0){
@@ -48,6 +55,7 @@ class Controller_ltn extends Controller_Template
 		}
 	}
 	public function get_hospitaldetails(){
+		session_start();
 		if(isset($_GET['id'])){
 			$data = LTNTables::get_HospitalDetails($_GET['id']);
 			if(strlen($_GET['id']) > 6 || strlen($_GET['id']) < 6 || !ctype_digit($_GET['id']) || sizeof($data['hospitalsData']) == 0){
@@ -68,6 +76,28 @@ class Controller_ltn extends Controller_Template
 	}
 	public function action_drgdetails()
 	{
+		session_start();
+		if(isset($_GET['id'])){
+			$data = array('drg_description' => LTNTables::get_DRG($_GET['id']));
+			if(strlen($_GET['id']) > 3 || strlen($_GET['id']) < 3 || !ctype_digit($_GET['id']) || sizeof($data['drg_description'])==0){
+				$data = array();
+				$this->template->title = 'DRG Details';
+				$this->template->content = View::forge('LetsTalkNumbers/drgERR.php', $data);
+			}
+			else{
+				$this->template->title = 'DRG Details';
+				$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
+			}
+		}
+		else{
+			$data = array('drg_description' => LTNTables::get_DRG('001'));
+			$this->template->title = 'DRG Details';
+			$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
+		}
+	}
+	public function get_drgdetails()
+	{
+		session_start();
 		if(isset($_GET['id'])){
 			$data = array('drg_description' => LTNTables::get_DRG($_GET['id']));
 			if(strlen($_GET['id']) > 3 || strlen($_GET['id']) < 3 || !ctype_digit($_GET['id']) || sizeof($data['drg_description'])==0){
@@ -98,36 +128,58 @@ class Controller_ltn extends Controller_Template
 				return Response::redirect('index.php/ltn');
 			}
 			else {
-				return Response::forge(View::Forge('authviews/outline', array(
-					'contents' => View::forge('authviews/login'),
-					'alerts' => View::forge('authviews/failalert', array('message' => 'Login failed'))
-				)));
+				//failed login
+				$this->template->alert = View::forge('LetsTalkNumbers/alert', array('message' => 'Login Failed', 'alertType' => 'failed'));
 			}
 		}
-		return Response::forge(View::Forge('authviews/outline', array(
-			'contents' => View::forge('authviews/login')
-		)));
+		//Default login page
+		$this->template->title = "Login";
+		$this->template->content = View::forge('LetsTalkNumbers/login');
 	}
-	public function get_drgdetails()
-	{
-		if(isset($_GET['id'])){
-			$data = array('drg_description' => LTNTables::get_DRG($_GET['id']));
-			if(strlen($_GET['id']) > 3 || strlen($_GET['id']) < 3 || !ctype_digit($_GET['id']) || sizeof($data['drg_description'])==0){
-				$data = array();
-				$this->template->title = 'DRG Details';
-				$this->template->content = View::forge('LetsTalkNumbers/drgERR.php', $data);
-			}
-			else{
-				$this->template->title = 'DRG Details';
-				$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
-			}
-		}
-		else{
-			$data = array('drg_description' => LTNTables::get_DRG('001'));
-			$this->template->title = 'DRG Details';
-			$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
-		}
+	public function action_logout() {
+		session_start();
+		$_SESSION["user_id"] = "";
+		session_destroy();
+		return Response::redirect('index.php/ltn');
 	}
-}
+	public function action_register() {
+		session_start();
+		if (Input::post()) {
+			// Validate the inputs using fuel validation
+			$val = Validation::forge();
+			$val->add_field('username', 'Your username', 'required');
+			// Now add another field for password, and require it to contain at least 3 and at most 10 characters
+			$val->add_field('password', 'Your password', 'required');
+			$val->add_field('email', 'Your email', 'required|valid_email');
+			if ($val->run()){
+				try {
+					if(Input::post('password')!= Input::post('passwordConfirm')){
+						throw new passwordException();
+					}
+					Auth::create_user(
+						Input::post('username'),
+						Input::post('password'),
+						Input::post('email')
+					);
+					$_SESSION['username'] = Input::post('username');
+					return Response::redirect('index.php/ltn');
+				}
+				catch (passwordException $e){
+					$this->template->alert = View::forge('LetsTalkNumbers/alert', array('message' => 'Registration Failed, Passwords did not match', 'alertType' => 'failed'));
+				}
+				catch (SimpleUserUpdateException $e) {
+					//failed login
+					$this->template->alert = View::forge('LetsTalkNumbers/alert', array('message' => 'Registration Failed, User already exists', 'alertType' => 'failed'));
+				}
 
+			} else {
+				// input validation failed
+				$this->template->alert = View::forge('LetsTalkNumbers/alert', array('message' => 'Registration Failed, Missing one or more field', 'alertType' => 'failed'));
+			}
+		}
+		//Default Registration page
+		$this->template->title = "Registration";
+		$this->template->content = View::forge('LetsTalkNumbers/register');
+		}
+}
 ?>

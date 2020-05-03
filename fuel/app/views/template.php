@@ -40,6 +40,11 @@
         }
       ?>
 		</div>
+        <?php
+            if (isset($alert)){
+                echo $alert;
+            }
+        ?>
 		<?php echo $content; ?>
 		<div class="footer">
 			  Colorado State University, Computer Science Department 
