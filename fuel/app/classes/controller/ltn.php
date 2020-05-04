@@ -52,10 +52,14 @@ class Controller_ltn extends Controller_Template
 			}
 			else{
 				$data = LTNTables::get_HospitalDetails('010001');
+				$this->template->title = 'Hospital Details';
+				$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
 			}
 		}
 		else{
 			$data = LTNTables::get_HospitalDetails('010001');
+			$this->template->title = 'Hospital Details';
+			$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
 		}
 		if(Input::post()){
 			if(isset($_POST['commentSub'])){
@@ -109,8 +113,6 @@ class Controller_ltn extends Controller_Template
 				//delete code this is gonna suck
 			}
 		}
-		$this->template->title = 'Hospital Details';
-		$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
 	}
 	public function action_drgdetails()
 	{

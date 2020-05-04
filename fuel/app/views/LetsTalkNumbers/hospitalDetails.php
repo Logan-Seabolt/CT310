@@ -102,6 +102,7 @@
     <div id="previous">Previous</div>
     <form method="GET">
         <span>Enter Page Number:</span><input type="text" name="page">
+        <input type="text" value="<?php if(isset($_GET['id']))echo $_GET['id']; else echo '010001';?>" name="id" style="display: none">
         <input type="submit" value="Search Page">
     </form>
     <div id="next">Next</div>
@@ -125,7 +126,7 @@
             if(<?php echo($_GET['page']); ?> == 0){
             }
         else{
-                window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitaldetails?page="+<?php echo ($_GET['page']-1);?>, "_self");
+                window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitaldetails?page=<?php echo ($_GET['page']-1);?>&id=<?php if(isset($_GET['id']))echo $_GET['id']; else echo '010001';?>", "_self");
             }
         });
         $("#next").click(function (){
@@ -133,7 +134,7 @@
             if(<?php echo($_GET['page']); ?> >= <?php echo (ceil(count($CasesData)/20));?>){
             }
         else{
-                window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitaldetails?page="+<?php echo ($_GET['page']+1);?>, "_self");
+                window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/hospitaldetails?page=<?php echo ($_GET['page']+1);?>&id=<?php if(isset($_GET['id']))echo $_GET['id']; else echo '010001';?>", "_self");
             }
         });
     </script>

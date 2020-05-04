@@ -87,7 +87,7 @@
 		if(<?php echo($_GET['page']); ?> == 0){			
 		}
 		else{
-			window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/drgdetails?page="+<?php echo ($_GET['page']-1);?>, "_self");
+			window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/drgdetails?page=<?php echo ($_GET['page']-1);?>&id=<?php if (isset($_GET['id'])) echo $_GET['id']; else echo '010001';?>", "_self");
 		}
 	});
 	$("#next").click(function (){
@@ -95,7 +95,7 @@
 		if(<?php echo($_GET['page']); ?> >= <?php echo (ceil(count($drg_description)/20));?>){		
 		}
 		else{
-			window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/drgdetails?page="+<?php echo ($_GET['page']+1);?>, "_self");
+			window.open("/~" + "<?php echo $author?>" +"/ct310/LTN/index.php/ltn/drgdetails?page=<?php echo ($_GET['page']+1);?>&id=<?php if(isset($_GET['id']))echo $_GET['id']; else echo '010001';?>", "_self");
 		}
 	});	
 </script>
