@@ -19,7 +19,8 @@ class LTNTables extends \Model {
         {
             $retarr = DB::query("SELECT * FROM hospitals WHERE providerID='$HospitalID'", DB::SELECT)->execute()->as_array();
             $DRG_DATA = DB::query("SELECT * FROM drg_cases WHERE providerID='$HospitalID'", DB::SELECT)->execute()->as_array();
-            return array("hospitalsData" => $retarr,"CasesData" => $DRG_DATA);
+            $commentsArr = DB::query("SELECT * FROM comments WHERE providerID='$HospitalID' AND replyTo IS NULL", DB::SELECT)->execute()->as_array();
+            return array("hospitalsData" => $retarr,"CasesData" => $DRG_DATA, "commentsArr" => $commentsArr);
         }
 }
 ?>

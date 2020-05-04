@@ -63,6 +63,7 @@
 <div id="previous">Previous</div>
 <form method="GET">
     <span>Enter Page Number:</span><input type="text" name="page">
+    <input type="text" value="<?php if(isset($_GET['id']))echo $_GET['id']; else echo '001';?>" name="id" style="display: none">
     <input type="submit" value="Search Page">
 </form>
 <div id="next">Next</div>

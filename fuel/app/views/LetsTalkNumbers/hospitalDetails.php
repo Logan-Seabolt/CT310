@@ -13,6 +13,9 @@
         else{
             $_GET['page'] = 0;
         }
+        if(!isset($_GET['id'])){
+            $_GET['id'] = '010001';
+        }
         ?>
         <script>
             $("document").ready(() => {
@@ -27,6 +30,41 @@
                 });
             });
         </script>
+        <style>
+            /* Dropdown Button */
+            .dropdownbtn {
+                background-color: #4CAF50;
+                color: white;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+            }
+
+            /* The container <div> - needed to position the dropdown content */
+            .dropdownMenu {
+                position: relative;
+                display: inline-block;
+            }
+
+            /* Dropdown Content (Hidden by Default) */
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 80px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            .dropdown-content span {
+                color: black;
+                padding: 10px;
+                text-decoration: none;
+                display: block;
+            }
+
+            /* Change color of dropdown links on hover */
+            .dropdown-content span:hover {background-color: #ddd;}
+        </style>
     </head>
     <body>
     <h2>
@@ -116,5 +154,76 @@
     }
     ?>
     <!--comments--->
+    <?php
+    use \DB;
+    foreach ($commentsArr as $comment){
+        $commentID = $comment['id'];
+        echo ("<table class='comment' id='$commentID'> <thead>");
+        echo ("<th>".$comment['username']."</th>");
+        echo ("<th>Date created: ".$comment['dateCreated']."<br>Last edit: ".$comment['lastEdit']."</th>");
+        echo ("<th>".($comment['upvotes'] - $comment['downvotes'])."</th>");
+        echo ("<th>".Asset::img('upvoteArrow.png', array('width'=>"20", 'height'=>"20"))."</th>");
+        echo ("<th>".Asset::img('downvoteArrow.png', array('width'=>"20", 'height'=>"20"))."</th>");
+        echo("<th>");
+        if(isset($_SESSION['username'])){
+            if($_SESSION['username'] == $comment['username']){
+                echo ("<div class='dropdownMenu'>");
+                echo ("<button class='dropdownbtn'>Options</button>");
+                echo ("<div class=\"dropdown-content\">");
+                echo ("<span class='edit'>Edit</span>");
+                echo ("<span class='delete'>Delete</span>");
+                echo ("</div></div>");
+            }
+        }
+        echo ("</th></thead>");
+        echo ("<tr class='mainText'><td colspan=\"6\" rowspan=\"3\">".$comment['text']."</td></tr>");
+        echo ("<tr></tr><tr></tr>");
+        if(isset($_SESSION['username'])){
+            echo ("<tr><td colspan=\"6\" class='clickable reply'>Reply to this comment</td></tr>");
+        }
+        $HospitalID = $comment['providerID'];
+        $replies = DB::query("SELECT * FROM comments WHERE providerID='$HospitalID' AND replyTo='$commentID'", DB::SELECT)->execute()->as_array();
+        if(count($replies) == 0){
+            echo("<tr><td colspan=\"6\">There are no replies to this comment</td></tr>");
+        }
+        else{
+            foreach ($replies as $reply){
+                echo("<tr><td colspan=\"6\"><table class='replyBlock'><thead>");
+                echo ("<th>".$reply['username']."</th>");
+                echo ("<th>Date created: ".$reply['dateCreated']."<br>Last edit: ".$reply['lastEdit']."</th>");
+                echo ("<th>".($reply['upvotes'] - $reply['downvotes'])."</th>");
+                echo ("<th>".Asset::img('upvoteArrow.png', array('width'=>"20", 'height'=>"20"))."</th>");
+                echo ("<th>".Asset::img('downvoteArrow.png', array('width'=>"20", 'height'=>"20"))."</th>");
+                echo ("<th>Drop Down Menu</th></thead>");
+                echo ("<tr><td colspan=\"6\" rowspan=\"3\">".$reply['text']."</td></tr>");
+                echo ("<tr></tr><tr></tr>");
+                echo ("</table>");
+            }
+        }
+        echo("</table>");
+    }
+    ?>
+    <script>
+        $(".reply").one("click", function () {
+            $(this).html("<form method='post'>" +
+                "<span>Leave your reply</span><input type='text' name='replyText'>" +
+                "<input type='number' style='display: none' name='replyID' value='"+$(this).parent().parent().parent().attr('id')+"'>" +
+                "<input type='submit' name='replySub'>");
+            $(this).removeClass("reply");
+        });
+        $(".dropdownbtn").click(function () {
+            $(this).parent().children("div").toggle();
+        });
+        $(".edit").click(function () {
+            $tableVar = $(this).parent().parent().parent().parent().parent().parent();
+            $commentArea = $tableVar.children("tbody").children(".mainText").children("td");
+            $oldText = $commentArea.text();
+            console.log($commentArea);
+            $commentArea.html("<form method='post'>" +
+                "<input type='text' name='editText' value='"+$oldText+"'>" +
+                "<input type='number' style='display: none' name='editID' value='"+$tableVar.attr('id')+"'>" +
+                "<input type='submit' name='editSub'>");
+        });
+    </script>
     </body>
 </html>
