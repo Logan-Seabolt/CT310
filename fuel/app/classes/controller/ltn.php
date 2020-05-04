@@ -1,5 +1,6 @@
 <?php
 use \Model\LTNTables;
+use \DB;
 class passwordException extends Exception { }
 
 class Controller_ltn extends Controller_Template
@@ -36,55 +37,98 @@ class Controller_ltn extends Controller_Template
 	public function action_hospitaldetails()
 	{
 		session_start();
-		if(isset($_GET['id'])){
-			$data = LTNTables::get_HospitalDetails($_GET['id']);
-			if(strlen($_GET['id']) > 6 || strlen($_GET['id']) < 6 || !ctype_digit($_GET['id']) || sizeof($data['hospitalsData']) == 0){
-				$data = array();
-				$this->template->title = 'Hospital Details';
-				$this->template->content = View::forge('LetsTalkNumbers/hospitalERR.php', $data);
+		if(Input::get()){
+			if(isset($_GET['id'])){
+				$data = LTNTables::get_HospitalDetails($_GET['id']);
+				if(strlen($_GET['id']) > 6 || strlen($_GET['id']) < 6 || !ctype_digit($_GET['id']) || sizeof($data['hospitalsData']) == 0){
+					$data = array();
+					$this->template->title = 'Hospital Details';
+					$this->template->content = View::forge('LetsTalkNumbers/hospitalERR.php', $data);
+				}
+				else{
+					$this->template->title = 'Hospital Details';
+					$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
+				}
 			}
 			else{
-				$this->template->title = 'Hospital Details';
-				$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
+				$data = LTNTables::get_HospitalDetails('010001');
 			}
 		}
 		else{
 			$data = LTNTables::get_HospitalDetails('010001');
-			$this->template->title = 'Hospital Details';
-			$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
 		}
-	}
-	public function get_hospitaldetails(){
-		session_start();
-		if(isset($_GET['id'])){
-			$data = LTNTables::get_HospitalDetails($_GET['id']);
-			if(strlen($_GET['id']) > 6 || strlen($_GET['id']) < 6 || !ctype_digit($_GET['id']) || sizeof($data['hospitalsData']) == 0){
-				$data = array();
-				$this->template->title = 'Hospital Details';
-				$this->template->content = View::forge('LetsTalkNumbers/hospitalERR.php', $data);
+		if(Input::post()){
+			if(isset($_POST['commentSub'])){
+				if(isset($_POST['commentText'])){
+					if(isset($_GET['id'])){
+						$id = $_GET['id'];
+					}
+					else{
+						$id = '010001';
+					}
+					$query = DB::insert('comments');
+					$date=date_create();
+					$query->set(array(
+						'username' => $_SESSION['username'],
+						'text' => $_POST['commentText'],
+						'dateCreated' => date_format($date, "Y-m-d H:i:s"),
+						'lastEdit' => date_format($date, "Y-m-d H:i:s"),
+						'providerID' => $id
+					))->execute();
+					$this->template->alert = View::forge('LetsTalkNumbers/alert', array('message' => 'Comment Success', 'alertType' => 'success'));
+				}
 			}
-			else{
-				$this->template->title = 'Hospital Details';
-				$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
+			elseif(isset($_POST['replySub'])){
+				if(isset($_POST['replyText'])){
+					if(isset($_GET['id'])){
+						$id = $_GET['id'];
+					}
+					else{
+						$id = '010001';
+					}
+					$query = DB::insert('comments');
+					$date=date_create();
+					$query->set(array(
+						'username' => $_SESSION['username'],
+						'text' => $_POST['replyText'],
+						'dateCreated' => date_format($date, "Y-m-d H:i:s"),
+						'lastEdit' => date_format($date, "Y-m-d H:i:s"),
+						'replyTo' => $_POST['replyID'],
+						'providerID' => $id
+					))->execute();
+					$this->template->alert = View::forge('LetsTalkNumbers/alert', array('message' => 'Reply Success', 'alertType' => 'success'));
+				}
+			}
+			elseif(isset($_POST['editSub'])){
+				if(isset($_POST['editText'])){
+					$date=date_create();
+					DB::query("UPDATE comments SET text='".$_POST['editText']."',lastEdit='".date_format($date,"Y-m-d H:i:s")."' WHERE id=".$_POST['editID'])->execute();
+				}
+			}
+			elseif (isset($_POST['deleteSub'])){
+				//delete code this is gonna suck
 			}
 		}
-		else{
-			$data = LTNTables::get_HospitalDetails('010001');
-			$this->template->title = 'Hospital Details';
-			$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
-		}
+		$this->template->title = 'Hospital Details';
+		$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
 	}
 	public function action_drgdetails()
 	{
 		session_start();
-		if(isset($_GET['id'])){
-			$data = array('drg_description' => LTNTables::get_DRG($_GET['id']));
-			if(strlen($_GET['id']) > 3 || strlen($_GET['id']) < 3 || !ctype_digit($_GET['id']) || sizeof($data['drg_description'])==0){
-				$data = array();
-				$this->template->title = 'DRG Details';
-				$this->template->content = View::forge('LetsTalkNumbers/drgERR.php', $data);
+		if(Input::get()) {
+			if (isset($_GET['id'])) {
+				$data = array('drg_description' => LTNTables::get_DRG($_GET['id']));
+				if (strlen($_GET['id']) > 3 || strlen($_GET['id']) < 3 || !ctype_digit($_GET['id']) || sizeof($data['drg_description']) == 0) {
+					$data = array();
+					$this->template->title = 'DRG Details';
+					$this->template->content = View::forge('LetsTalkNumbers/drgERR.php', $data);
+				} else {
+					$this->template->title = 'DRG Details';
+					$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
+				}
 			}
 			else{
+				$data = array('drg_description' => LTNTables::get_DRG('001'));
 				$this->template->title = 'DRG Details';
 				$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
 			}
@@ -95,27 +139,7 @@ class Controller_ltn extends Controller_Template
 			$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
 		}
 	}
-	public function get_drgdetails()
-	{
-		session_start();
-		if(isset($_GET['id'])){
-			$data = array('drg_description' => LTNTables::get_DRG($_GET['id']));
-			if(strlen($_GET['id']) > 3 || strlen($_GET['id']) < 3 || !ctype_digit($_GET['id']) || sizeof($data['drg_description'])==0){
-				$data = array();
-				$this->template->title = 'DRG Details';
-				$this->template->content = View::forge('LetsTalkNumbers/drgERR.php', $data);
-			}
-			else{
-				$this->template->title = 'DRG Details';
-				$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
-			}
-		}
-		else{
-			$data = array('drg_description' => LTNTables::get_DRG('001'));
-			$this->template->title = 'DRG Details';
-			$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
-		}
-	}
+
 	public function action_login() {
 		session_start();
 		if (Input::post()) {
@@ -182,4 +206,47 @@ class Controller_ltn extends Controller_Template
 		$this->template->content = View::forge('LetsTalkNumbers/register');
 		}
 }
+//Outdated code
+/*
+	public function get_drgdetails()
+	{
+		session_start();
+		if(isset($_GET['id'])){
+			$data = array('drg_description' => LTNTables::get_DRG($_GET['id']));
+			if(strlen($_GET['id']) > 3 || strlen($_GET['id']) < 3 || !ctype_digit($_GET['id']) || sizeof($data['drg_description'])==0){
+				$data = array();
+				$this->template->title = 'DRG Details';
+				$this->template->content = View::forge('LetsTalkNumbers/drgERR.php', $data);
+			}
+			else{
+				$this->template->title = 'DRG Details';
+				$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
+			}
+		}
+		else{
+			$data = array('drg_description' => LTNTables::get_DRG('001'));
+			$this->template->title = 'DRG Details';
+			$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
+		}
+	}
+	public function get_hospitaldetails(){
+		session_start();
+		if(isset($_GET['id'])){
+			$data = LTNTables::get_HospitalDetails($_GET['id']);
+			if(strlen($_GET['id']) > 6 || strlen($_GET['id']) < 6 || !ctype_digit($_GET['id']) || sizeof($data['hospitalsData']) == 0){
+				$data = array();
+				$this->template->title = 'Hospital Details';
+				$this->template->content = View::forge('LetsTalkNumbers/hospitalERR.php', $data);
+			}
+			else{
+				$this->template->title = 'Hospital Details';
+				$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
+			}
+		}
+		else{
+			$data = LTNTables::get_HospitalDetails('010001');
+			$this->template->title = 'Hospital Details';
+			$this->template->content = View::forge('LetsTalkNumbers/hospitalDetails.php', $data);
+		}
+	}*/
 ?>
