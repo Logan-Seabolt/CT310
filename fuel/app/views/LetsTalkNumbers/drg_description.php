@@ -60,13 +60,12 @@
         ?>
         </tbody>
     </table>
-<div id="previous">Previous</div>
-<form method="GET">
-    <span>Enter Page Number:</span><input type="text" name="page">
-    <input type="text" value="<?php if(isset($_GET['id']))echo $_GET['id']; else echo '001';?>" name="id" style="display: none">
-    <input type="submit" value="Search Page">
-</form>
-<div id="next">Next</div>
+<div id="previous">&laquo; Previous</div>
+	<form method="GET" id="searchPage">
+		<span>Enter Page Number:</span><input type="text" name="page">
+		<input type="submit" value="Search Page">
+	</form>
+<div id="next">Next &raquo;</div>
 <script>
     <?php
     $temp = $GLOBALS["_SERVER"];

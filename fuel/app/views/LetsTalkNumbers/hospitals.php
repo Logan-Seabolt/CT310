@@ -50,12 +50,12 @@
         </tbody>
     </table>
 </div>
-<div id="previous">Previous</div>
-<form method="GET">
-    <span>Enter Page Number:</span><input type="text" name="page">
-    <input type="submit" value="Search Page">
-</form>
-<div id="next">Next</div>
+	<div id="previous">&laquo; Previous</div>
+	<form method="GET" id="searchPage">
+		<span>Enter Page Number:</span><input type="text" name="page">
+		<input type="submit" value="Search Page">
+	</form>
+	<div id="next">Next &raquo;</div>
 <script>
     <?php
     $temp = $GLOBALS["_SERVER"];
