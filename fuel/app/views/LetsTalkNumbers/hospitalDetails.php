@@ -157,17 +157,27 @@
     <!--comments--->
     <?php
     use \DB;
+    //Get user's admin level
+    if(isset($_SESSION['username'])){
+        $AdminLevel = DB::query("SELECT group_id FROM users WHERE username='".$_SESSION['username']."'", DB::SELECT)->execute()->as_array()[0]['group_id'];
+    }
     foreach ($commentsArr as $comment){
         $commentID = $comment['id'];
-        echo ("<table class='comment' id='$commentID'> <thead>");
-        echo ("<th>".$comment['username']."</th>");
+        echo ("<table class='commentBlock' id='$commentID'> <thead>");
+        if($comment['deleted'] == 1){
+            $Username = '[deleted]';
+        }
+        else{
+            $Username = $comment['username'];
+        }
+        echo ("<th>".$Username."</th>");
         echo ("<th>Date created: ".$comment['dateCreated']."<br>Last edit: ".$comment['lastEdit']."</th>");
         echo ("<th>".($comment['upvotes'] - $comment['downvotes'])."</th>");
-        echo ("<th>".Asset::img('upvoteArrow.png', array('width'=>"20", 'height'=>"20"))."</th>");
-        echo ("<th>".Asset::img('downvoteArrow.png', array('width'=>"20", 'height'=>"20"))."</th>");
+        echo ("<th>".Asset::img('upvoteArrow.png', array('width'=>"50", 'height'=>"50",'class'=>'UpVote'))."</th>");
+        echo ("<th>".Asset::img('downvoteArrow.png', array('width'=>"50", 'height'=>"50",'class'=>'DownVote'))."</th>");
         echo("<th>");
         if(isset($_SESSION['username'])){
-            if($_SESSION['username'] == $comment['username']){
+            if(($_SESSION['username'] == $comment['username'] || $AdminLevel == 2) && $comment['deleted'] == 0){
                 echo ("<div class='dropdownMenu'>");
                 echo ("<button class='dropdownbtn'>Options</button>");
                 echo ("<div class=\"dropdown-content\">");
@@ -177,10 +187,19 @@
             }
         }
         echo ("</th></thead>");
-        echo ("<tr class='mainText'><td colspan=\"6\" rowspan=\"3\">".$comment['text']."</td></tr>");
+        if($comment['deleted'] == 1){
+            $text = '[deleted]';
+        }
+        else{
+            $text = $comment['text'];
+        }
+        echo ("<tr class='mainText'><td colspan=\"6\" rowspan=\"3\">".$text."</td></tr>");
         echo ("<tr></tr><tr></tr>");
         if(isset($_SESSION['username'])){
-            echo ("<tr><td colspan=\"6\" class='clickable reply'>Reply to this comment</td></tr>");
+            echo ("<tr><td colspan=\"6\" class='clickable reply'>Click here to reply to this comment</td></tr>");
+        }
+        else{
+            echo ("<tr><td colspan=\"6\">Log in to reply to comments</td></tr>");
         }
         $HospitalID = $comment['providerID'];
         $replies = DB::query("SELECT * FROM comments WHERE providerID='$HospitalID' AND replyTo='$commentID'", DB::SELECT)->execute()->as_array();
@@ -189,14 +208,38 @@
         }
         else{
             foreach ($replies as $reply){
-                echo("<tr><td colspan=\"6\"><table class='replyBlock'><thead>");
-                echo ("<th>".$reply['username']."</th>");
+                echo("<tr><td colspan=\"6\"><table class='replyBlock' id='".$reply['id']."'><thead>");
+                if($reply['deleted'] == 1){
+                    $Username = '[deleted]';
+                }
+                else{
+                    $Username = $reply['username'];
+                }
+                echo ("<th>".$Username."</th>");
+
                 echo ("<th>Date created: ".$reply['dateCreated']."<br>Last edit: ".$reply['lastEdit']."</th>");
                 echo ("<th>".($reply['upvotes'] - $reply['downvotes'])."</th>");
-                echo ("<th>".Asset::img('upvoteArrow.png', array('width'=>"20", 'height'=>"20"))."</th>");
-                echo ("<th>".Asset::img('downvoteArrow.png', array('width'=>"20", 'height'=>"20"))."</th>");
-                echo ("<th>Drop Down Menu</th></thead>");
-                echo ("<tr><td colspan=\"6\" rowspan=\"3\">".$reply['text']."</td></tr>");
+                echo ("<th>".Asset::img('upvoteArrow.png', array('width'=>"50", 'height'=>"50",'class'=>'UpVote'))."</th>");
+                echo ("<th>".Asset::img('downvoteArrow.png', array('width'=>"50", 'height'=>"50",'class'=>'DownVote'))."</th>");
+                echo("<th>");
+                if(isset($_SESSION['username'])){
+                    if(($_SESSION['username'] == $reply['username'] || $AdminLevel == 2) && $reply['deleted'] == 0){
+                        echo ("<div class='dropdownMenu'>");
+                        echo ("<button class='dropdownbtn'>Options</button>");
+                        echo ("<div class=\"dropdown-content\">");
+                        echo ("<span class='edit'>Edit</span>");
+                        echo ("<span class='delete'>Delete</span>");
+                        echo ("</div></div>");
+                    }
+                }
+                echo ("</th></thead>");
+                if($reply['deleted'] == 1){
+                    $text = '[deleted]';
+                }
+                else{
+                    $text = $reply['text'];
+                }
+                echo ("<tr class='mainText'><td colspan=\"6\" rowspan=\"3\">".$text."</td></tr>");
                 echo ("<tr></tr><tr></tr>");
                 echo ("</table>");
             }
@@ -216,15 +259,47 @@
             $(this).parent().children("div").toggle();
         });
         $(".edit").click(function () {
-            $tableVar = $(this).parent().parent().parent().parent().parent().parent();
-            $commentArea = $tableVar.children("tbody").children(".mainText").children("td");
-            $oldText = $commentArea.text();
-            console.log($commentArea);
+            var $tableVar = $(this).parent().parent().parent().parent().parent().parent();
+            var $commentArea = $tableVar.children("tbody").children(".mainText").children("td");
+            var $oldText = $commentArea.text();
             $commentArea.html("<form method='post'>" +
                 "<input type='text' name='editText' value='"+$oldText+"'>" +
                 "<input type='number' style='display: none' name='editID' value='"+$tableVar.attr('id')+"'>" +
                 "<input type='submit' name='editSub'>");
         });
+        $(".delete").click(function () {
+            var $tableVar = $(this).parent().parent().parent().parent().parent().parent().attr('id');
+            var $tableType = $(this).parent().parent().parent().parent().parent().parent().attr('class');
+            $(document.body).append("<form method='post' id='deleteSubmit'>" +
+                "<input type='text' style='display: none' name='deleteSub' value='yes'>" +
+                "<input type='text' style='display: none' name='deleteType' value='"+$tableType+"'>" +
+                "<input type='number' style='display: none' name='deleteID' value='"+$tableVar+"'>" +
+                "</form>");
+            if(window.confirm("Are you sure you want to delete this comment?")){
+                $("#deleteSubmit").submit();
+            }
+            else{
+                $("#deleteSubmit").html("");
+                $("#deleteSubmit").removeAttr('id');
+            }
+        });
+        $(".UpVote").click(function () {
+            var $tableVar = $(this).parent().parent().parent().parent().attr('id');
+            console.log($tableVar);
+            $(document.body).append("<form method='post' id='upvoteSubmit'>" +
+                "<input type='text' style='display: none' name='upvoteSub' value='yes'>" +
+                "<input type='number' style='display: none' name='upvoteID' value='"+$tableVar+"'>" +
+                "</form>");
+            $("#upvoteSubmit").submit();
+        })
+        $(".DownVote").click(function () {
+            var $tableVar = $(this).parent().parent().parent().parent().attr('id');
+            $(document.body).append("<form method='post' id='downvoteSubmit'>" +
+                "<input type='text' style='display: none' name='downvoteSub' value='yes'>" +
+                "<input type='number' style='display: none' name='downvoteID' value='"+$tableVar+"'>" +
+                "</form>");
+            $("#downvoteSubmit").submit();
+        })
     </script>
     </body>
 </html>
