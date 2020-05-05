@@ -116,7 +116,7 @@
         echo ("<span>Leave a comment about this Hospital!</span><input type=\"text\" name=\"commentText\" id=\"commentBox\">");
         echo ("<input type=\"submit\" value=\"Leave a Comment\" name=\"commentSub\"></form>");
     }else{
-        echo ("<h3>Please Log in To Comment</h3>");
+        echo ("<h3>Please <a href=\"./login\">Log in</a> To Comment</h3>");
     }
     ?>
     <!--comments--->
@@ -136,18 +136,18 @@
             $Username = $comment['username'];
         }
         echo ("<th>".$Username."</th>");
-        echo ("<th>Date created: ".$comment['dateCreated']."<br>Last edit: ".$comment['lastEdit']."</th>");
-        echo ("<th>".($comment['upvotes'] - $comment['downvotes'])."</th>");
-        echo ("<th>".Asset::img('upvoteArrow.png', array('width'=>"50", 'height'=>"50",'class'=>'UpVote'))."</th>");
-        echo ("<th>".Asset::img('downvoteArrow.png', array('width'=>"50", 'height'=>"50",'class'=>'DownVote'))."</th>");
+        echo ("<th>Date created: ".$comment['dateCreated']."<br>Last edit: ".$comment['lastEdit']."</th>");        
+        echo ("<th>".Asset::img('upvoteArrow.png', array('width'=>"50", 'height'=>"50",'class'=>'UpVote clickable'))."</th>");
+		echo ("<th>".($comment['upvotes'] - $comment['downvotes'])."</th>");
+        echo ("<th>".Asset::img('downvoteArrow.png', array('width'=>"50", 'height'=>"50",'class'=>'DownVote clickable'))."</th>");
         echo("<th>");
         if(isset($_SESSION['username'])){
             if(($_SESSION['username'] == $comment['username'] || $AdminLevel == 2) && $comment['deleted'] == 0){
                 echo ("<div class='dropdownMenu'>");
-                echo ("<button class='dropdownbtn'>Options</button>");
+                echo ("<button class='dropdownbtn clickable'>Options</button>");
                 echo ("<div class=\"dropdown-content\">");
-                echo ("<span class='edit'>Edit</span>");
-                echo ("<span class='delete'>Delete</span>");
+                echo ("<span class='edit clickable'>Edit</span>");
+                echo ("<span class='delete clickable'>Delete</span>");
                 echo ("</div></div>");
             }
         }
@@ -182,18 +182,18 @@
                 }
                 echo ("<th>".$Username."</th>");
 
-                echo ("<th>Date created: ".$reply['dateCreated']."<br>Last edit: ".$reply['lastEdit']."</th>");
-                echo ("<th>".($reply['upvotes'] - $reply['downvotes'])."</th>");
-                echo ("<th>".Asset::img('upvoteArrow.png', array('width'=>"50", 'height'=>"50",'class'=>'UpVote'))."</th>");
-                echo ("<th>".Asset::img('downvoteArrow.png', array('width'=>"50", 'height'=>"50",'class'=>'DownVote'))."</th>");
+                echo ("<th>Date created: ".$reply['dateCreated']."<br>Last edit: ".$reply['lastEdit']."</th>");          
+                echo ("<th>".Asset::img('upvoteArrow.png', array('width'=>"50", 'height'=>"50",'class'=>'UpVote clickable'))."</th>");
+				echo ("<th>".($reply['upvotes'] - $reply['downvotes'])."</th>");
+                echo ("<th>".Asset::img('downvoteArrow.png', array('width'=>"50", 'height'=>"50",'class'=>'DownVote clickable'))."</th>");
                 echo("<th>");
                 if(isset($_SESSION['username'])){
                     if(($_SESSION['username'] == $reply['username'] || $AdminLevel == 2) && $reply['deleted'] == 0){
                         echo ("<div class='dropdownMenu'>");
-                        echo ("<button class='dropdownbtn'>Options</button>");
+                        echo ("<button class='dropdownbtn clickable'>Options</button>");
                         echo ("<div class=\"dropdown-content\">");
-                        echo ("<span class='edit'>Edit</span>");
-                        echo ("<span class='delete'>Delete</span>");
+                        echo ("<span class='edit clickable'>Edit</span>");
+                        echo ("<span class='delete clickable'>Delete</span>");
                         echo ("</div></div>");
                     }
                 }

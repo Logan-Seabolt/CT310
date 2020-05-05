@@ -99,6 +99,12 @@ body {
 /* Change color of dropdown links on hover */
 .dropdown-content span:hover {background-color: #ddd;}    
 
+/*For comments*/
+.clickable:hover{
+	cursor: pointer;
+	color: blue;
+}
+
 th:hover {
   background-color: black;
   color: white;
