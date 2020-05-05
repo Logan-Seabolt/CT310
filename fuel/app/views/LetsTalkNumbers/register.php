@@ -27,8 +27,8 @@ echo \Form::csrf();
 </div>
 <div class="form-group">
     <label for="AdminCode">Admin Passcode</label>
-    <input type="password" class="form-control" id="AdminCode" aria-describedby="Optional" name='adminCode'>
-    <small id="Optional" class="form-text text-muted">*Optional</small>
+    <input type="password" class="form-control" id="AdminCode" aria-describedby="Optional" name='adminCode' value="default">
+    <small id="Optional" class="form-text text-muted">*Optional, FOR ADMINISTRATION USE ONLY. DO NOT CHANGE IF NOT ADMIN</small>
 </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 <?php

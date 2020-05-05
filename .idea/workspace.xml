@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="eb5dd6c3-9ac6-4f91-bb22-be03a960cb85" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drg_description.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/drg_description.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuel/app/classes/controller/ltn.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/classes/controller/ltn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitalDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/hospitalDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/fuel/app/views/LetsTalkNumbers/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +65,8 @@
       <workItem from="1587676261503" duration="40000" />
       <workItem from="1588182159326" duration="2459000" />
       <workItem from="1588268470690" duration="15420000" />
-      <workItem from="1588543466035" duration="24596000" />
+      <workItem from="1588543466035" duration="24729000" />
+      <workItem from="1588618934171" duration="18937000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing incorrect php file">
       <created>1586816418898</created>
