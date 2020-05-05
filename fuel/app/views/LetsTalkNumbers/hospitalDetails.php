@@ -30,41 +30,6 @@
                 });
             });
         </script>
-        <style>
-            /* Dropdown Button */
-            .dropdownbtn {
-                background-color: #4CAF50;
-                color: white;
-                padding: 16px;
-                font-size: 16px;
-                border: none;
-            }
-
-            /* The container <div> - needed to position the dropdown content */
-            .dropdownMenu {
-                position: relative;
-                display: inline-block;
-            }
-
-            /* Dropdown Content (Hidden by Default) */
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #f1f1f1;
-                min-width: 80px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-            }
-            .dropdown-content span {
-                color: black;
-                padding: 10px;
-                text-decoration: none;
-                display: block;
-            }
-
-            /* Change color of dropdown links on hover */
-            .dropdown-content span:hover {background-color: #ddd;}
-        </style>
     </head>
     <body>
     <h2>
@@ -99,13 +64,13 @@
             </tbody>
         </table>
     </div>
-    <div id="previous">Previous</div>
-    <form method="GET">
+    <div id="previous">&laquo; Previous</div>
+    <form method="GET" id="searchPage">
         <span>Enter Page Number:</span><input type="text" name="page">
         <input type="text" value="<?php if(isset($_GET['id']))echo $_GET['id']; else echo '010001';?>" name="id" style="display: none">
         <input type="submit" value="Search Page">
     </form>
-    <div id="next">Next</div>
+    <div id="next">Next &raquo;</div>
     <script>
         <?php
         $temp = $GLOBALS["_SERVER"];
