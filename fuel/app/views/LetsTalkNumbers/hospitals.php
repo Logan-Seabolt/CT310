@@ -52,7 +52,7 @@
 </div>
 	<div id="previous">&laquo; Previous</div>
 	<form method="GET" id="searchPage">
-		<span>Enter Page Number:</span><input type="text" name="page">
+		<span class="enterpage">Enter Page Number:</span><input type="text" name="page">
 		<input type="submit" value="Search Page">
 	</form>
 	<div id="next">Next &raquo;</div>

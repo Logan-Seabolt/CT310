@@ -66,7 +66,7 @@
     </div>
     <div id="previous">&laquo; Previous</div>
     <form method="GET" id="searchPage">
-        <span>Enter Page Number:</span><input type="text" name="page">
+        <span class="enterpage">Enter Page Number:</span><input type="text" name="page">
         <input type="text" value="<?php if(isset($_GET['id']))echo $_GET['id']; else echo '010001';?>" name="id" style="display: none">
         <input type="submit" value="Search Page">
     </form>
@@ -105,15 +105,20 @@
     </script>
     <h2>Hospital Lookup</h2>
     <form method="GET">
-        <span>Enter Hospital ID:</span><input type="text" name="id">
+        <span class="enterhid">Enter Hospital ID:</span><input type="text" name="id">
         <input type="submit" value="Search Hospital">
     </form>
     <!---Comment Section code--->
     <h2>Comments</h2>
+	 
+
     <?php
+	$hname = strtolower($hospitalsData[0]['providerName']);
+	
+	$hname = ucwords($hname);
     if(isset($_SESSION['username'])){
         echo ("<form method=\"POST\">");
-        echo ("<span>Leave a comment about this Hospital!</span><input type=\"text\" name=\"commentText\" id=\"commentBox\">");
+        echo ("<span>Leave a comment about <b>$hname </b></span><input type=\"text\" name=\"commentText\" id=\"commentBox\">");
         echo ("<input type=\"submit\" value=\"Leave a Comment\" name=\"commentSub\"></form>");
     }else{
         echo ("<h3>Please <a href=\"./login\">Log in</a> To Comment</h3>");
