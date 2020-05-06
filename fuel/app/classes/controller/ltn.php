@@ -6,20 +6,9 @@ class BadAdminException extends Exception { }
 
 class Controller_ltn extends Controller_Template
 {
-	public function getAuthor(){
-		$temp = $GLOBALS["_SERVER"];
-		$temp = implode($temp);
-		$line = explode("/", $temp);
-		if(in_array("seaboltl",$line))
-			return "seaboltl";
-		elseif (in_array("demuthtc",$line))
-			return "demuthtc";
-		else
-			return "nlstan";
-	}
 	public function action_index()
 	{
-		$currentAuthor = $this->getAuthor();
+		$currentAuthor = "seaboltl";
 		session_save_path('/s/chopin/n/under/'.$currentAuthor.'/save_path');
 		//$savepath = session_save_path();
 		session_start();
@@ -30,7 +19,7 @@ class Controller_ltn extends Controller_Template
 	}
 	public function action_about()
 	{
-		$currentAuthor = $this->getAuthor();
+		$currentAuthor = "seaboltl";
 		session_save_path('/s/chopin/n/under/'.$currentAuthor.'/save_path');
 		session_start();
 		$data = array();
@@ -39,7 +28,7 @@ class Controller_ltn extends Controller_Template
 	}
 	public function action_hospitals()
 	{
-		$currentAuthor = $this->getAuthor();
+		$currentAuthor = "seaboltl";
 		session_save_path('/s/chopin/n/under/'.$currentAuthor.'/save_path');
 		session_start();
 		$data = array('hospitals' => LTNTables::get_table('hospitals'));
@@ -48,7 +37,7 @@ class Controller_ltn extends Controller_Template
 	}
 	public function action_drglist()
 	{
-		$currentAuthor = $this->getAuthor();
+		$currentAuthor = "seaboltl";
 		session_save_path('/s/chopin/n/under/'.$currentAuthor.'/save_path');
 		session_start();
 		$data = array('drg_description' => LTNTables::get_table('drg_description'));
@@ -57,7 +46,7 @@ class Controller_ltn extends Controller_Template
 	}
 	public function action_hospitaldetails()
 	{
-		$currentAuthor = $this->getAuthor();
+		$currentAuthor = "seaboltl";
 		session_save_path('/s/chopin/n/under/'.$currentAuthor.'/save_path');
 		session_start();
 		if(Input::post()){
@@ -169,7 +158,7 @@ class Controller_ltn extends Controller_Template
 	}
 	public function action_drgdetails()
 	{
-		$currentAuthor = $this->getAuthor();
+		$currentAuthor = "seaboltl";
 		session_save_path('/s/chopin/n/under/'.$currentAuthor.'/save_path');
 		session_start();
 		if(Input::get()) {
@@ -197,7 +186,7 @@ class Controller_ltn extends Controller_Template
 		}
 	}
 	public function action_login() {
-		$currentAuthor = $this->getAuthor();
+		$currentAuthor = "seaboltl";
 		session_save_path('/s/chopin/n/under/'.$currentAuthor.'/save_path');
 		session_start();
 		if (Input::post()) {
@@ -219,7 +208,7 @@ class Controller_ltn extends Controller_Template
 		$this->template->content = View::forge('LetsTalkNumbers/login');
 	}
 	public function action_logout() {
-		$currentAuthor = $this->getAuthor();
+		$currentAuthor = "seaboltl";
 		session_save_path('/s/chopin/n/under/'.$currentAuthor.'/save_path');
 		session_start();
 		$_SESSION["user_id"] = "";
@@ -227,7 +216,7 @@ class Controller_ltn extends Controller_Template
 		return Response::redirect('index.php/ltn');
 	}
 	public function action_register() {
-		$currentAuthor = $this->getAuthor();
+		$currentAuthor = "seaboltl";
 		session_save_path('/s/chopin/n/under/'.$currentAuthor.'/save_path');
 		session_start();
 		if (Input::post()) {
