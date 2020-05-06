@@ -9,13 +9,17 @@ class Controller_ltn extends Controller_Template
 
 	public function action_index()
 	{
+		session_save_path('/s/chopin/n/under/seaboltl/save_path');
+		//$savepath = session_save_path();
 		session_start();
 		$data = array();
 		$this->template->title = 'Lets Talk Numbers';
 		$this->template->content = View::forge('LetsTalkNumbers/index.php', $data);
+		//$this->template->alert = View::forge('LetsTalkNumbers/alert', array('message' => 'Savepath is: '.$savepath, 'alertType' => 'success'));
 	}
 	public function action_about()
 	{
+		session_save_path('/s/chopin/n/under/seaboltl/save_path');
 		session_start();
 		$data = array();
 		$this->template->title = 'About';
@@ -23,6 +27,7 @@ class Controller_ltn extends Controller_Template
 	}
 	public function action_hospitals()
 	{
+		session_save_path('/s/chopin/n/under/seaboltl/save_path');
 		session_start();
 		$data = array('hospitals' => LTNTables::get_table('hospitals'));
 		$this->template->title = 'Hospital List';
@@ -30,6 +35,7 @@ class Controller_ltn extends Controller_Template
 	}
 	public function action_drglist()
 	{
+		session_save_path('/s/chopin/n/under/seaboltl/save_path');
 		session_start();
 		$data = array('drg_description' => LTNTables::get_table('drg_description'));
 		$this->template->title = 'DRG List';
@@ -37,6 +43,7 @@ class Controller_ltn extends Controller_Template
 	}
 	public function action_hospitaldetails()
 	{
+		session_save_path('/s/chopin/n/under/seaboltl/save_path');
 		session_start();
 		if(Input::post()){
 			if (isset($_POST['commentSub'])){
@@ -147,6 +154,7 @@ class Controller_ltn extends Controller_Template
 	}
 	public function action_drgdetails()
 	{
+		session_save_path('/s/chopin/n/under/seaboltl/save_path');
 		session_start();
 		if(Input::get()) {
 			if (isset($_GET['id'])) {
@@ -172,8 +180,8 @@ class Controller_ltn extends Controller_Template
 			$this->template->content = View::forge('LetsTalkNumbers/drg_description.php', $data);
 		}
 	}
-
 	public function action_login() {
+		session_save_path('/s/chopin/n/under/seaboltl/save_path');
 		session_start();
 		if (Input::post()) {
 			$username = Input::post('username');
@@ -194,12 +202,14 @@ class Controller_ltn extends Controller_Template
 		$this->template->content = View::forge('LetsTalkNumbers/login');
 	}
 	public function action_logout() {
+		session_save_path('/s/chopin/n/under/seaboltl/save_path');
 		session_start();
 		$_SESSION["user_id"] = "";
 		session_destroy();
 		return Response::redirect('index.php/ltn');
 	}
 	public function action_register() {
+		session_save_path('/s/chopin/n/under/seaboltl/save_path');
 		session_start();
 		if (Input::post()) {
 			// Validate the inputs using fuel validation
