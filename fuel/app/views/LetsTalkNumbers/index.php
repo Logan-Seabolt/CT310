@@ -5,7 +5,7 @@
 	<div id="data-analysis">
 	<h2>Hospital Inpatient Prospective Payment System (IPPS) Charge Analysis Software – A CT310 Class Project</h2>
 
-<h3>Overview</h3>
+<h3>Milestone 1</h3>
 <p>Hospitals are often reimbursed by Medicaid for a procedure at a rate much less than the hospital bills and, sometimes, less than it costs the hospital to provide the care to the patient.  For this software, we will analyze these data by Provider and MS-DRG to provide insight into hospital reimbursement.</p>
 <h3>The Data</h3>
 <p>We will use the FY2017 data from the Center for Medicare and Medicaid Services (CMS) IPPS files.  These files contain various columns, including columns that identify the Provider, the MS-DRG, and the Payment Details.  These three categories will work together to view the data from different perspectives.</p>
@@ -36,8 +36,41 @@
 <h4>Team Composition</h4>
 <p>A team is composed of 1-4 members.  Teams are formed by the students.  The project is designed to be a decent amount of work and will be challenging for teams of 1 or 2, yet teams of 4 might find a different challenge is coordinating team logistics.</p>
 <p>Students will form their teams in the groups section of Canvas.  Student can add themselves to a team or to one of the special groups to be randomly paired or to request to work alone.  Students requesting to work alone must present their case to the instructor about why they desire to work alone and must commit to essentially a double workload for the remainder of the semester.  This request will be granted at the discretion of the instructor.  Otherwise, any students not on a team will be randomly assigned to form new teams.</p>
-
+<h3>Milestone 2</h3>
+<ul>
+	<li>Database backend is now required.</li>
+	<li>Database should start with 3 tables, hospitals, drgs, and a many-to-many linking table that links these and includes the financial data.</li>
+	<li>Users and Logins</li>
+	<ul>
+		<li>Users can now log in.  There are regular users and admin users.</li>
+		<li>There must be a user account, username "ct310" with password "cookiesareyummy"</li>
+		<li>There must be an admin account, username "ct310admin" with password "RoundPiesAreBest"</li>
+	</ul>
+	<li>Table Pagination</li>
+	<ul>
+	<li>On the Hospital and DRG details pages, the tables are now paginated to show 20 entries at a time.</li>
+	</ul>
+	<li>Reddit-style comments</li>
+	<ul>
+	<li>On the Hospital Detail Page, below the paginated table, allow users to post "reddit-style" comments.  This includes:</li>
 	
+	<ul>
+		<li>Can create a top-level comment.</li>
+		<li>Can reply to an existing comment.</li>
+		<li>Can upvote/downvote a comment (show the comment's current score by it)</li>
+		<li>A user can edit their own comments.  Admins can edit any comment.</li>
+		<li>A user can delete their own comment, Admins can delete any comment.</li>
+		<li>A comment without replies is completely deleted</li>
+		<li>A comment with replies is replaced with "[deleted]" and is no longer editable or deletable</li>
+		<li>Deleted comments no longer display the user name</li>
+		<li>Comments display:</li>
+		<ul>
+			<li>date/time originally created</li>
+			<li>date/time last edited (if any)</li>
+			<li>Username of the user who created the comment</li>
+		</ul></ul>
+	</ul>
+</ul>	
 	</div>
 	</body>
 </html>
