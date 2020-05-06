@@ -66,7 +66,7 @@
       <workItem from="1588543466035" duration="24729000" />
       <workItem from="1588618934171" duration="18937000" />
       <workItem from="1588641799931" duration="8000" />
-      <workItem from="1588802033465" duration="2876000" />
+      <workItem from="1588802033465" duration="4141000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing incorrect php file">
       <created>1586816418898</created>
@@ -180,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587073133422</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added $s to hospitalDetails.php">
+      <created>1588804951366</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1588804951366</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,10 +223,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="911" y="74" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587001457763" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1587073132829">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1588804950669">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587073132829" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588804950669" />
     <state x="267" y="275" key="FileChooserDialogImpl" timestamp="1587676290780">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -232,10 +239,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1274" y="447" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588537402703" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1587073134776">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1588804953382">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587073134776" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588804953382" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586815924105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
